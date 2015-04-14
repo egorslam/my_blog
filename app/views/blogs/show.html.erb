@@ -6,8 +6,10 @@
 
 	<p class="date">
 		Submitted <%= time_ago_in_words(@blog.created_at) %> Ago
+		<% if user_signed_in? %>
 		| <%= link_to 'Edit', edit_blog_path(@blog) %>
 		<%= link_to 'Delete', blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' } %>
+		<% end %>
 	</p>
 <div id="comments">
 		<h2><%= @blog.posts.count %> Post</h2>
