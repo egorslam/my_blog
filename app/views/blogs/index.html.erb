@@ -1,7 +1,6 @@
 <% provide(:title, 'Home page') %>
-<% @blogs.each do |blog| %>
-	<div class="post_wrapper">
-		<h2 class="title"><%= link_to blog.title, blog %></h2>
-		<p class="date"><%= blog.created_at.strftime("%B %d, %Y") %></p>
-	</div>
-<% end %>
+<div class="post_wrapper">
+	<h2 class="title"><%= link_to @blog.title, @blog %></h2>
+	<span><%= @blog.user.email%></span>
+	<p class="date"><%= @blog.created_at.strftime("%B %d, %Y") %></p>
+</div>
