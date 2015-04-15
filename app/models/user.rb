@@ -13,4 +13,7 @@ class User < ActiveRecord::Base
     build_blog({title: "Noname blog"})
   end
 
+  def full_name
+  	current_user.first_name
+  end
 end
