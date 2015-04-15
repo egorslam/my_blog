@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   after_create :add_new_blog
 
   def add_new_blog
-    create_blog({title: "Noname blog"})
+    build_blog({title: "Noname blog"})
   end
 
 end
