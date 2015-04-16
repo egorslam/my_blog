@@ -1,19 +1,21 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+	has_one :blog
 
- has_one :blog
-
-  devise :database_authenticatable, :registerable,
+	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
- after_create :add_new_blog
+	 after_create :add_new_blog
+	 mount_uploader :avatar, AvatarUploader
 
-  def add_new_blog
-    build_blog({title: "Noname blog"})
-  end
+	 validates_presence_of   :avatar
+ 	 validates_integrity_of  :avatar
+  	 validates_processing_of :avatar
 
-  def full_name
-  	current_user.first_name
-  end
+	  def add_new_blog
+	    build_blog({title: "Noname blog"})
+	  end
+
+	  def full_name
+	  	current_user.first_name
+	  end
 end

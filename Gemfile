@@ -46,5 +46,8 @@ group :development, :test do
 
   gem 'devise'
   gem 'quiet_assets'
+  gem 'carrierwave'
+  gem "mini_magick"
+  gem 'bootstrap-sass'
 end
 
