@@ -1,3 +1,33 @@
+<div class="well">
+                    <h4>Title:</h4>
+                    <%= form_for([@blog, @blog.posts.build]) do |f| %>
+                    <form role="form">
+                        <div class="form-group">
+                        <%= f.label :title %>
+                            <textarea class="form-control" rows="1"><%= f.text_field :title %><br></textarea>
+                        </div>
+                        <h4>Text:</h4>
+                        <div class="form-group">
+                        <%= f.label :body %>
+                            <textarea class="form-control" rows="3"><%= f.text_area :body %></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><%= f.submit %>Add</button>
+                    </form>
+                    <% end %>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <%= form_for([@blog, @blog.posts.build]) do |f| %>
 	<%= f.label :title %>:<br>
 	<%= f.text_field :title %><br>

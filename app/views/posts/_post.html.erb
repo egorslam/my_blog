@@ -1,16 +1,23 @@
-<div class="comment clearfix">
-	<div class="comment_content">
-		<p class="comment_name"><strong><%= post.title %></strong></p>
-		<p class="comment_body"><%= post.body %></p>
-		<p class="comment_time"><%= time_ago_in_words(post.created_at) %> Ago</p>
-	</div>
-	<% if user_signed_in? %>
-		<p><%= link_to 'Delete', [post.blog, post],
-									  method: :delete,
-									  class: "button",
-									 	data: { confirm: 'Are you sure?' } %>
+<div class="media">
+                    <a class="pull-left" href="#">
+                        <!-- <img class="media-object" src="http://placehold.it/64x64" alt=""> -->
+                        <%= image_tag @blog.user.avatar.small %>
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading"><%= post.title %>
+                           <small><%= post.created_at %>
+                           	<% if user_signed_in? %>	
+                           		<%= link_to ' | Delete', [post.blog, post],
+														  method: :delete,
+														  class: "button",
+														 	data: { confirm: 'Are you sure?' } %>
 
-		</p>
-	<% end %>
-	
-</div>
+										<% end %>
+										<br><%= post.body %>
+							</small>
+                        </h4>
+       
+						
+                    </div>
+                </div>
+

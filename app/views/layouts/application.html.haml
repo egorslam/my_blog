@@ -4,14 +4,11 @@
     %title
       MyBlog | #{yield(:title)}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
     #sidebar
-      #logo
-        = link_to root_path do
-          = image_tag "logo.svg"
+ 
       %ul
         %li.category Website
         %li= link_to "Blog", root_path
