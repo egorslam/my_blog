@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
 
+	def new
+		@post = Post.new
+	end
+	
 	def create 
 		@blog = Blog.find(params[:blog_id])
 		@post = @blog.posts.create(post_params)
