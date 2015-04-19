@@ -4,7 +4,6 @@ Rails.application.routes.draw do
  	resources :posts
 
  	end
-  root 'pages#home'
-
-	get '/about', to: 'pages#about'
+  root 'home_page#index'
+  get '/about', to: 'pages#about'
 end

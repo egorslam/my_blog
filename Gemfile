@@ -48,6 +48,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'carrierwave'
   gem "mini_magick"
-  gem 'bootstrap-sass'
+  gem "activeadmin"
+
 end
 

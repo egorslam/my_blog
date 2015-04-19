@@ -1,6 +1,6 @@
 	<h1><%= post.title %>
 		<small><%= @blog.title %></small></h1>
-			<p><span class="glyphicon glyphicon-time"></span> 
+			<p><span class="glyphicon glyphicon-time"><%= post.created_at %></span> 
 				<% if user_signed_in? %>  
 	                              <%= link_to ' | Delete', [post.blog, post],
 	                              method: :delete,

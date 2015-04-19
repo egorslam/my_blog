@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 		@post = @blog.posts.find(params[:id])
 		@post.destroy
 
-		redirect_to root_path(@post)
+		redirect_to root_page
 	end
 
 private 
