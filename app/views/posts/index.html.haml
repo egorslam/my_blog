@@ -1,0 +1,15 @@
+.container
+  - if user_signed_in?
+    - provide(:title, 'All post')
+    - @post.each do |post|
+      %h2.title= post.title
+      %p.date= post.created_at.strftime("%B %d, %Y")
+      = post.body
+      %hr/
+  - else
+    - provide(:title, 'Hello')
+    .center-block
+      .jumbotron
+        %h1 Hello
+        %p Join Us!
+        = link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg"

@@ -1,0 +1,21 @@
+- provide(:title, @blog.title)
+.container
+  .row
+    .col-lg-8
+      %h1
+        = @blog.title
+        - if user_signed_in?
+          %small= link_to 'Edit', edit_blog_path(@blog)
+      %p.lead
+        by
+        %a{:href => "#"} Noname User
+      %hr/
+      %p
+        %span.glyphicon.glyphicon-time
+        Start blog #{time_ago_in_words(@blog.created_at)}
+      %hr/
+      / Preview Image
+      = render "posts/form"
+      %hr/
+      / Posted Comments
+      = render @blog.posts

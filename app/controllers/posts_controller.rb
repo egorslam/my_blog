@@ -3,6 +3,11 @@ class PostsController < ApplicationController
 	def new
 		@post = Post.new
 	end
+
+	def index
+		@post = Post.all.order('created_at DESC')
+	end
+
 	
 	def create 
 		@blog = Blog.find(params[:blog_id])
@@ -17,7 +22,7 @@ class PostsController < ApplicationController
 		@post = @blog.posts.find(params[:id])
 		@post.destroy
 
-		redirect_to root_page
+		redirect_to blog_path(@blog)
 	end
 
 private 

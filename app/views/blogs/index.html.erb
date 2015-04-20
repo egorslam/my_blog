@@ -1,8 +1,0 @@
-
-<% provide(:title, 'Home page') %>
-<% @blogs.each do |blog| %>
-<div class = "container">
-		<h2 class="title"><%= link_to blog.title, blog %></h2>
-		<p class="date"><%= blog.created_at.strftime("%B %d, %Y") %></p>
-	</div>
-<% end %>

@@ -1,0 +1,10 @@
+.well
+  %h4 Title:
+  = form_for([@blog, @blog.posts.build])do |f|
+    %div{:role => "form"}
+      .form-group
+        = f.text_field :title, class: "form-control"
+      %h4 Text:
+      .form-group
+        = f.text_area :body, class: "form-control"
+      = f.submit class: "btn btn-primary"
