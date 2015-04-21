@@ -9,7 +9,7 @@ class BlogsController < ApplicationController
 		@blog = Blog.new
 	end
 
-	def create #cоздание блога 
+	def create #cоздание блога
 		@blog = Blog.new(blog_params)
 		if @blog.save
 			redirect_to @blog
@@ -17,7 +17,7 @@ class BlogsController < ApplicationController
 		render 'new'
 		end
 	end
-	
+
 	def show #вывод блога
 		@blog =Blog.find(params[:id])
 	end
@@ -29,7 +29,7 @@ class BlogsController < ApplicationController
 
 	def update
 		@blog =Blog.find(params[:id])
-		if @blog.update(params[:blog].permit(:title))
+		if @blog.update(blog_params)
 			redirect_to @blog
 		else
 			render 'edit'
@@ -43,9 +43,9 @@ class BlogsController < ApplicationController
 		redirect_to blogs_path
 
 	end
-	
-	private 
+
+	private
 	def blog_params
-		params.require(:blog).permit(:title, :blogimg)	#передача требуемых парметров методам выше 
+		params.require(:blog).permit(:title, :blogimg)	#передача требуемых парметров методам выше
 	end
 end
