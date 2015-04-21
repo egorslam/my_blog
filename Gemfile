@@ -23,6 +23,10 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem 'factory_girl'
 
+gem 'omniauth'
+
+gem 'omniauth-facebook'
+
 # gem 'will_paginate'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
