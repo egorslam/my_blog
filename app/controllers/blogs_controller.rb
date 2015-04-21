@@ -46,6 +46,6 @@ class BlogsController < ApplicationController
 	
 	private 
 	def blog_params
-		params.require(:blog).permit(:title)	#передача требуемых парметров методам выше 
+		params.require(:blog).permit(:title, :blogimg)	#передача требуемых парметров методам выше 
 	end
 end

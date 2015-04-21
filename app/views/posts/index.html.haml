@@ -2,8 +2,11 @@
   - if user_signed_in?
     - provide(:title, 'All post')
     - @post.each do |post|
+      %hr/
       %h2.title= post.title
+      %h4= link_to "#{post.blog.title}", blog_path(post.blog)
       %p.date= post.created_at.strftime("%B %d, %Y")
+      %p.lead
       = post.body
       %hr/
   - else

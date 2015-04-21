@@ -1,9 +1,0 @@
-- provide(:title, 'Home')
-.container
-  - if user_signed_in?
-  - else
-    .center-block
-      .jumbotron
-        %h1 Hello
-        %p Join Us!
-        = link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg"

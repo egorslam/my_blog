@@ -3,6 +3,7 @@ ActiveAdmin.register Blog do
 		column :user_id
 		column :title
 		column :created_at
+    column :blogimg
 		
 		actions
 	end

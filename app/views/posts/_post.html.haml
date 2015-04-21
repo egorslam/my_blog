@@ -1,8 +1,10 @@
+%a.pull-left{:href => "#"}
+  = image_tag(post.blog.user.avatar.small.url, class: 'img-wrapper')
 %h1
   = post.title
   %small= @blog.title
 %p
-  %span.glyphicon.glyphicon-time= post.created_at
+  %span.glyphicon.glyphicon-time= "Posted #{time_ago_in_words(@blog.created_at)}"
   - if user_signed_in?
     = link_to ' | Delete', [post.blog, post], method: :delete, class: "button", data: { confirm: 'Are you sure?' }
 %hr/

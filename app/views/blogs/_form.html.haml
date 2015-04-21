@@ -1,6 +1,6 @@
 .well
   %div{:role => "form"}
-    = form_for @blog do |f|
+    = form_for @blog, :html => {:multipart => true} do |f|
       - if @blog.errors.any?
         #errors
           %h2= pluralize(@blog.errors.count, "error")
@@ -10,4 +10,11 @@
       .form-group
         %h4 Title:
         = f.text_field :title, class: "form-control"
+        .form-group
+          %h4 Image:
+          %br/
+          =f.file_field :blogimg
       = f.submit class: "btn btn-primary"
+
+
+

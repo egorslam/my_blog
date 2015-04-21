@@ -4,18 +4,19 @@
     .col-lg-8
       %h1
         = @blog.title
-        - if user_signed_in?
-          %small= link_to 'Edit', edit_blog_path(@blog)
+        %small by #{@blog.user.full_name}
       %p.lead
-        by
-        %a{:href => "#"} Noname User
+      - if user_signed_in?
+        %h4= link_to 'Edit', edit_blog_path(@blog)
       %hr/
       %p
         %span.glyphicon.glyphicon-time
         Start blog #{time_ago_in_words(@blog.created_at)}
       %hr/
-      / Preview Image
-      = render "posts/form"
+      = image_tag(@blog.blogimg, class: 'img')
       %hr/
       / Posted Comments
+      / - puts @blog.posts
       = render @blog.posts
+
+      = render "posts/form"      
