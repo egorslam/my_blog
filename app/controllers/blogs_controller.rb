@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
-		@blogs = Blog.all.order('created_at DESC') #все посты на начальной странице
+		@blogs = Blog.latest #все посты на начальной странице
 	end
 
 	def new

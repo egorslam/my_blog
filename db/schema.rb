@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150421094516) do
+ActiveRecord::Schema.define(version: 20150421143804) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -43,8 +43,9 @@ ActiveRecord::Schema.define(version: 20150421094516) do
     t.string   "title"
     t.text     "body"
     t.integer  "blog_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "status",     default: false
   end
 
   add_index "posts", ["blog_id"], name: "index_posts_on_blog_id"

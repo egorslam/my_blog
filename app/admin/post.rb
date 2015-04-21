@@ -1,6 +1,12 @@
 ActiveAdmin.register Post do
-index do
+  permit_params :status, :title, :body, :blog_id
+
+  scope :published
+  scope :unpublished
+  
+  index do
 		column :blog_id
+    column :status
 		column :title
 		column :body
 		column :created_at
