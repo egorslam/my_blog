@@ -25,6 +25,9 @@ class BlogsController < ApplicationController
 
 	def edit
 		@blog =Blog.find(params[:id])
+		unless @blog.user == current_user 
+			redirect_to root_path, notice: 'You have no rights.'
+		end			
 	end
 
 	def update
