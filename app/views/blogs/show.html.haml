@@ -6,7 +6,7 @@
         = @blog.title
         %small by #{@blog.user.full_name}
       %p.lead
-      - if user_signed_in?
+      - if @blog.user == current_user
         %h4= link_to 'Edit', edit_blog_path(@blog)
       %hr/
       %p
@@ -18,5 +18,5 @@
       / Posted Comments
       / - puts @blog.posts
       = render @blog.posts
-
-      = render "posts/form"      
+      - if @blog.user == current_user
+        = render "posts/form"      
