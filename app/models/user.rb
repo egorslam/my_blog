@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 	 after_create :add_new_blog
 	 mount_uploader :avatar, AvatarUploader
+   
 
 	 
  	 #validates_integrity_of  :avatar

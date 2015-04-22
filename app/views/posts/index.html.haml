@@ -3,6 +3,8 @@
     - provide(:title, 'All post')
     - @post.each do |post|
       %hr/
+      %a.pull-left{:href => "#"}
+        = image_tag(post.blog.blogimg.middle.url, class: 'img-wrapper')
       %h2.title= post.title
       %h4= link_to "#{post.blog.title}", blog_path(post.blog)
       %p.date= post.created_at.strftime("%B %d, %Y")
@@ -15,5 +17,27 @@
       .jumbotron
         %h1 Hello
         %p Join Us!
-        = link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" 
-        = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-lg btn-facebook"
+        = link_to "Sign up", "#", class: "btn btn-primary btn-lg", data: {"target" => "#upModal", "toggle" => "modal"}, :type => "button"
+        = link_to "Sign in", "#", class: "btn btn-primary btn-lg", data: {"target" => "#myModal", "toggle" => "modal"}, :type => "button"
+        or
+        \#{link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-default btn-facebook"}
+#myModal.modal{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4#myModalLabel.modal-title Log in 
+      .modal-body
+      = render 'devise/sessions/new_form'
+    
+#upModal.modal{"aria-hidden" => "true", "aria-labelledby" => "upModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4#myModalLabel.modal-title Registration 
+      .modal-body
+        = render 'devise/registrations/new_form'
+    

@@ -1,22 +1,2 @@
-- provide(:title, 'Sign In')
-#page_wrapper
-  %h2 Log in
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true
-    %br/
-    .field
-      = f.label :password
-      %br/
-      = f.password_field :password, autocomplete: "off"
-    %br/
-    - if devise_mapping.rememberable?
-      .field
-        = f.check_box :remember_me
-        = f.label :remember_me
-    %br/
-    .actions
-      = f.submit "Log in"
-  %br/
+- provide(:title, 'Sign up')
+= render 'new_form'
