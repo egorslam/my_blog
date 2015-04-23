@@ -27,6 +27,7 @@ gem 'omniauth'
 
 gem 'omniauth-facebook'
 
+gem 'kaminari'
 # gem 'will_paginate'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -60,6 +61,10 @@ group :development, :test do
   
   gem 'devise'
   gem 'quiet_assets'
+end
 
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
 end
 

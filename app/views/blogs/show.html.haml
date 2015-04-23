@@ -1,22 +1,22 @@
 - provide(:title, @blog.title)
 .container
   .row
-    .col-lg-8
+    .col-md-8.col-md-offset-2
       %h1
         = @blog.title
-        %small by #{@blog.user.full_name}
+        %small by #{@blog.user.full_name} 
       %p.lead
       - if @blog.user == current_user
-        %h4= link_to 'Edit', edit_blog_path(@blog)
+        %h4= link_to 'Edit', edit_blog_path(@blog) 
       %hr/
       %p
         %span.glyphicon.glyphicon-time
-        Start blog #{time_ago_in_words(@blog.created_at)}
+        Start blog #{time_ago_in_words(@blog.created_at)}. In Blog #{@blog.posts.count} posts
       %hr/
       = image_tag(@blog.blogimg, class: 'img-responsive')
       %hr/
       / Posted Comments
       / - puts @blog.posts
-      = render @blog.posts
+      = render @blog.posts.order('created_at DESC')
       - if @blog.user == current_user
         = render "posts/form"      

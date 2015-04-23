@@ -3,6 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+    = favicon_link_tag 'favicon.ico' 
     %title
       MyBlog | #{yield(:title)}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
@@ -14,10 +15,11 @@
       %br/
       %br/
       %br/
-      %br/
-      - flash.each do |name, msg|
-        .alert.alert-warning
-          = content_tag(:div, msg)
+      .row
+        .col-md-8.col-md-offset-2
+          - flash.each do |name, msg|
+            .alert.alert-warning
+              = content_tag(:div, msg)
     %br/
     = yield
     = render 'layouts/footer'
