@@ -13,7 +13,7 @@
         %span.glyphicon.glyphicon-time
         Start blog #{time_ago_in_words(@blog.created_at)}
       %hr/
-      = image_tag(@blog.blogimg, class: 'img')
+      = image_tag(@blog.blogimg, class: 'img-responsive')
       %hr/
       / Posted Comments
       / - puts @blog.posts

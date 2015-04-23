@@ -1,13 +1,13 @@
 .well
   %h4 Title:
-  = form_for(@post) do |f|
+  = form_for([@blog, @blog.posts.build])do |f|
     %div{:role => "form"}
-      - if @post.errors.any?
-      = puts "Errors: #{@post.erros}"
+      - if @blog.errors.any?
+      = puts "Errors: #{@blog.erros}"
         #errors
-          %h2= pluralize(@post.errors.count, "error")
+          %h2= pluralize(@blog.errors.count, "error")
           %ul
-            - @post.errors.full_messages.each do |msg|
+            - @blog.errors.full_messages.each do |msg|
               %li= msg
       .form-group
         = f.text_field :title, class: "form-control"

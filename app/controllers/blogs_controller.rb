@@ -20,7 +20,6 @@ class BlogsController < ApplicationController
 
 	def show #вывод блога
 		@blog =Blog.find(params[:id])
-		@post = @blog.posts.new
 	end
 
 
