@@ -1,14 +1,15 @@
-%a.pull-left{:href => "#"}
-  = image_tag(post.blog.user.avatar.small.url, class: 'img-wrapper')
-%h1
-  = post.title
-  %small= @blog.title
-%p
-  %span.glyphicon.glyphicon-time= "Posted #{time_ago_in_words(post.created_at)} ago."
-  - if post.blog.user == current_user
-    = link_to ' | Delete', [post.blog, post], method: :delete, class: "button", data: { confirm: 'Are you sure?' }
-%hr/
-%p.lead
-  = post.body
-%hr/
-%hr/
+
+  %a.pull-left{:href => "#"}
+    = image_tag(post.blog.user.avatar.small.url, class: 'img-wrapper')
+  %h1
+    = post.title
+    %small= @blog.title
+  %p
+    %span.glyphicon.glyphicon-time= "Posted #{time_ago_in_words(post.created_at)} ago."
+    - if post.blog.user == current_user
+      = link_to ' | Delete', [post.blog, post], method: :delete, class: "button", data: { confirm: 'Are you sure?' }
+  %hr/
+  %p.lead
+    = post.body
+  %hr/
+  %hr/
