@@ -88,6 +88,9 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dotenv (2.0.1)
+    dotenv-rails (2.0.1)
+      dotenv (= 2.0.1)
     erb2haml (0.1.5)
       html2haml
     erubis (2.7.0)
@@ -264,7 +267,7 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
-    pg (0.15.1)
+    pg (0.18.1)
     polyamorous (1.2.0)
       activerecord (>= 3.0)
     quiet_assets (1.1.0)
@@ -359,6 +362,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   devise
+  dotenv-rails
   erb2haml
   factory_girl
   fog
