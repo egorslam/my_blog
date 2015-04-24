@@ -2,12 +2,12 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
 config.omniauth :facebook, "1595863674003645", "1e06cefeec9fe19cdcfdf27b4650ae5e"
-  # config.secret_key = '-- secret key --' 
+    # config.secret_key = '-- secret key --' 
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = 'd01e8101ddb3826a275a5765de95bd03a4ecf6392ae414747634d66e076f7a4984751ab6da79aa380cb871de609301b2025c0c080932b392621386be9bfdb672'
+  config.secret_key = 'd01e8101ddb3826a275a5765de95bd03a4ecf6392ae414747634d66e076f7a4984751ab6da79aa380cb871de609301b2025c0c080932b392621386be9bfdb672sss'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
