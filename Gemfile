@@ -57,6 +57,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :production do
   # gem 'pg'
   gem 'mysql2'
+  gem 'therubyracer'
   gem 'rails_12factor', '0.0.2'
 end
 # Use Unicorn as the app server
