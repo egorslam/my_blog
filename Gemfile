@@ -17,6 +17,10 @@ gem 'carrierwave'
 
 gem "fog"
 
+gem 'redcarpet' 
+
+gem 'gollum'
+
 gem "mini_magick"
 
 gem 'activeadmin', github: 'activeadmin'

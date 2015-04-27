@@ -8,7 +8,7 @@
   - if post.blog.user == current_user
     = link_to ' | Delete', [post.blog, post], method: :delete, class: "button", data: { confirm: 'Are you sure?' }
 %hr/
-%p.lead
-  = post.body
+.lead
+  = raw post.body_html
 %hr/
 %hr/

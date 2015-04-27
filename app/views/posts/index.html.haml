@@ -11,8 +11,8 @@
           %h4= link_to "#{post.blog.title}", blog_path(post.blog)
           %p.date= post.created_at.strftime("%B %d, %Y")
           %hr/
-          %p.lead
-            = truncate(post.body, :length => 320)
+          .lead
+            = markdown truncate(post.body, :length => 320)
           %hr/
         = paginate @posts
       - else
