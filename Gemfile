@@ -29,6 +29,14 @@ gem 'factory_girl'
 
 gem 'omniauth'
 
+gem 'capistrano'
+
+gem 'capistrano-bundler'
+
+gem 'capistrano-rails'
+
+gem 'capistrano-rbenv'
+
 gem 'truncate_html'
 
 gem 'omniauth-facebook'
@@ -47,7 +55,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 group :production do
-  gem 'pg'
+  # gem 'pg'
+  gem 'mysql2'
   gem 'rails_12factor', '0.0.2'
 end
 # Use Unicorn as the app server
