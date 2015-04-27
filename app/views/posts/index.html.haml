@@ -12,7 +12,7 @@
           %p.date= post.created_at.strftime("%B %d, %Y")
           %hr/
           .lead
-            = markdown truncate(post.body, :length => 320)
+            = truncate_html(raw(post.body_html), length: 150, omission: '...(continued)')
           %hr/
         = paginate @posts
       - else

@@ -29,6 +29,8 @@ gem 'factory_girl'
 
 gem 'omniauth'
 
+gem 'truncate_html'
+
 gem 'omniauth-facebook'
 
 gem 'kaminari'
