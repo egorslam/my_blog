@@ -26,3 +26,4 @@ production:
   database: myapp
   username: egor  
   password: egor123
+  host: localhost
