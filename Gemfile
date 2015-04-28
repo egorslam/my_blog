@@ -19,6 +19,8 @@ gem "fog"
 
 gem 'redcarpet' 
 
+gem 'mime-types', '2.4.3'
+
 gem 'gollum'
 
 gem "mini_magick"
