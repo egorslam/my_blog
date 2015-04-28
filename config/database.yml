@@ -22,4 +22,5 @@ test:
 
 production:
   adapter: mysql2
-  <<: *default
+  encoding: utf8
+  database: my_blog
