@@ -25,5 +25,5 @@ production:
   encoding: utf8
   database: my_blog
   username: egor  
-  password: egor123
+  password: egor.12345
   host: localhost
